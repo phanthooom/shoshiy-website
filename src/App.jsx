@@ -26,7 +26,7 @@ const T = {
     stat1_l: "Projects delivered",
     stat2_l: "Gov. systems built",
     stat3_l: "Client retention",
-    badge1: "2.4M+ daily requests",
+    badge1: "850K+ daily requests",
     badge2: "ISO 27001 secured",
     badge3: "National GIS coverage",
     trust_label: "Trusted by institutions that can't afford to get it wrong",
@@ -95,7 +95,7 @@ const T = {
     stat1_l: "Проектов сдано",
     stat2_l: "Гос. систем построено",
     stat3_l: "Клиентов возвращается",
-    badge1: "2.4М+ запросов в день",
+    badge1: "850K+ запросов в день",
     badge2: "Защита ISO 27001",
     badge3: "Национальное ГИС-покрытие",
     trust_label: "Нам доверяют организации, которые не могут позволить себе ошибку",
@@ -164,7 +164,7 @@ const T = {
     stat1_l: "Yakunlangan loyihalar",
     stat2_l: "Qurilgan davlat tizimlari",
     stat3_l: "Mijozlar qaytadi",
-    badge1: "Kuniga 2.4M+ so'rov",
+    badge1: "Kuniga 850K+ so'rov",
     badge2: "ISO 27001 xavfsizligi",
     badge3: "Milliy GIS qamrovi",
     trust_label: "Xato qilolmaydigan tashkilotlar bizga ishonadi",
@@ -299,19 +299,20 @@ const SOLUTIONS_I18N = {
 
 /* Portfolio — real sites */
 const PORTFOLIO = [
-  { cls: "lg", g: "g-gis", live: "map", cat: "Logistics · Platform", h: "Shoshiy Logistics", p: "Real-time cargo and fleet management platform serving Uzbekistan's logistics sector.", url: "https://logistics.shoshiy.uz/" },
-  { cls: "", g: "g-ai", cat: "SaaS · Survey", h: "ProSurvey", p: "Offline-first survey platform used by field teams across Uzbekistan.", url: "https://www.prosurvey.uz/" },
-  { cls: "", g: "g-fin", live: "chart", cat: "Real Estate", h: "Mulk.top", p: "Property marketplace connecting buyers and sellers across Central Asia.", url: "https://mulk.top/" },
-  { cls: "wide", g: "g-gov", cat: "Media · News", h: "Darakchi Hi-Tech", p: "High-traffic technology news section powering Uzbekistan's leading media platform.", url: "https://darakchi.uz/uz/categories/hi-tech" },
-  { cls: "tall", g: "g-mob", cat: "Mobile · Fitness", h: "Matrix Fitness UZ", p: "Digital presence and booking platform for Uzbekistan's premium fitness network.", url: "https://www.matrixfitness.uz/" },
-  { cls: "", g: "g-gis", cat: "E-commerce", h: "Bozorli", p: "Modern marketplace platform serving thousands of active buyers and sellers.", url: "https://bozorli.uz/en" },
-  { cls: "", g: "g-ai", cat: "EdTech · LMS", h: "SkillUp.uz", p: "Online learning platform powering professional development across the region.", url: "https://skillup.uz/" },
-  { cls: "", g: "g-mob", cat: "NeuroTech · Health", h: "Neuroxise", p: "Digital platform for cognitive and neurological health, built for modern clinical workflows.", url: "https://neuroxise-website.vercel.app/" },
-  { cls: "", g: "g-mob", cat: "Telecom", h: "HappyTel", p: "Telecom service platform with mobile-first UX for digital subscriptions.", url: "https://happytel.uz/" },
-  { cls: "", g: "g-fin", cat: "Cleaning · Service", h: "Cleaning X", p: "On-demand cleaning service booking platform with real-time scheduling.", url: "https://cleaning-x-lac.vercel.app/" },
-  { cls: "", g: "g-gov", cat: "Food · Delivery", h: "Kuda Pizza", p: "Food delivery and ordering platform with dynamic menu management.", url: "https://kuda-pizza-nine.vercel.app/" },
-  { cls: "", g: "g-gis", cat: "Legal · Inspection", h: "Lyuki Revizor", p: "Inspection management system for municipal infrastructure oversight.", url: "https://www.lyukirevizor.uz/" },
-  { cls: "", g: "g-ai", cat: "Travel", h: "Botermi", p: "Travel and tourism booking platform for the Uzbek market.", url: "https://botermi.uz/" },
+  { cls: "lg", g: "g-gis", live: "map",    cat: "Logistics · Platform", h: "Shoshiy Logistics", p: "Real-time cargo and fleet management platform serving Uzbekistan's logistics sector.", url: "https://logistics.shoshiy.uz/" },
+  { cls: "",   g: "g-ai",  live: "grid",   cat: "SaaS · Survey",        h: "ProSurvey",          p: "Offline-first survey platform used by field teams across Uzbekistan.", url: "https://www.prosurvey.uz/" },
+  { cls: "",   g: "g-fin", live: "chart",  cat: "Real Estate",           h: "Mulk.top",           p: "Property marketplace connecting buyers and sellers across Central Asia.", url: "https://mulk.top/" },
+  { cls: "wide", g: "g-gov", live: "bars", cat: "Media · News",          h: "Darakchi Hi-Tech",   p: "High-traffic technology news section powering Uzbekistan's leading media platform.", url: "https://darakchi.uz/uz/categories/hi-tech" },
+  { cls: "tall", g: "g-mob", live: "pulse",cat: "Mobile · Fitness",      h: "Matrix Fitness UZ",  p: "Digital presence and booking platform for Uzbekistan's premium fitness network.", url: "https://www.matrixfitness.uz/" },
+  { cls: "",   g: "g-gis", live: "orbit",  cat: "E-commerce",            h: "Bozorli",            p: "Modern marketplace platform serving thousands of active buyers and sellers.", url: "https://bozorli.uz/en" },
+  { cls: "",   g: "g-ai",  live: "orbit",  cat: "EdTech · LMS",          h: "SkillUp.uz",         p: "Online learning platform powering professional development across the region.", url: "https://skillup.uz/" },
+  { cls: "",   g: "g-mob", live: "pulse",  cat: "NeuroTech · Health",    h: "Neuroxise",          p: "Digital platform for cognitive and neurological health, built for modern clinical workflows.", url: "https://neuroxise-website.vercel.app/" },
+  { cls: "",   g: "g-mob", live: "signal", cat: "Telecom",               h: "HappyTel",           p: "Telecom service platform with mobile-first UX for digital subscriptions.", url: "https://happytel.uz/" },
+  { cls: "",   g: "g-fin", live: "dots",   cat: "Cleaning · Service",    h: "Cleaning X",         p: "On-demand cleaning service booking platform with real-time scheduling.", url: "https://cleaning-x-lac.vercel.app/" },
+  { cls: "",   g: "g-gov", live: "radar",  cat: "Food · Delivery",       h: "Kuda Pizza",         p: "Food delivery and ordering platform with dynamic menu management.", url: "https://kuda-pizza-nine.vercel.app/" },
+  { cls: "",   g: "g-gis", live: "grid",   cat: "Legal · Inspection",    h: "Lyuki Revizor",      p: "Inspection management system for municipal infrastructure oversight.", url: "https://www.lyukirevizor.uz/" },
+  { cls: "",   g: "g-ai",  live: "chart",  cat: "Travel",                h: "Botermi",            p: "Travel and tourism booking platform for the Uzbek market.", url: "https://botermi.uz/" },
+  { cls: "",   g: "g-gov", live: "orbit",  cat: "Gov · Registry",        h: "Nikoh",              p: "Digital marriage registration and ceremony management platform for Uzbekistan.", url: "https://nikoh.shoshiy.uz/" },
 ];
 
 const TECH = ["React", "ArcGIS", "Node.js", "PostgreSQL", "TypeScript", "Kubernetes", "PostGIS", "Python", "Go", "PyTorch", "Kafka", "Redis", "Next.js", "Swift", "Kotlin", "Terraform", "gRPC", "Flutter"];
@@ -319,16 +320,16 @@ const BIG_TECH = new Set(["React", "ArcGIS", "Node.js", "PostgreSQL"]);
 
 /* Realistic numbers */
 const ACH_NUMS = [
-  { n: 47, s: "+", lKey: "ach1" },
-  { n: 2.4, s: "M+", lKey: "ach2" },
-  { n: 18, s: "+", lKey: "ach3" },
-  { n: 96, s: "%", lKey: "ach4" },
+  { n: 28, s: "+", lKey: "ach1" },
+  { n: 850, s: "K+", lKey: "ach2" },
+  { n: 11, s: "+", lKey: "ach3" },
+  { n: 94, s: "%", lKey: "ach4" },
 ];
 
 const HERO_STATS = [
-  { n: 47, s: "+", lKey: "stat1_l" },
-  { n: 18, s: "+", lKey: "stat2_l" },
-  { n: 96, s: "%", lKey: "stat3_l" },
+  { n: 28, s: "+", lKey: "stat1_l" },
+  { n: 11, s: "+", lKey: "stat2_l" },
+  { n: 94, s: "%", lKey: "stat3_l" },
 ];
 
 const TESTI_DATA = [
@@ -337,6 +338,8 @@ const TESTI_DATA = [
   { av: "RT", nm: "Rustam Tashkentov", rl_en: "CTO, NaviBank", rl_ru: "Технический директор, NaviBank", rl_uz: "CTO, NaviBank", q_en: "Our core banking migration was the cleanest enterprise rollout I've seen in 12 years. Zero downtime, zero data loss.", q_ru: "Миграция нашего ядра банковской системы — самый чистый корпоративный запуск за 12 лет. Никаких простоев, никаких потерь данных.", q_uz: "Asosiy bank tizimimizning migratsiyasi — 12 yilda ko'rgan eng toza korporativ bosqich. Nol to'xtash vaqti, nol ma'lumot yo'qolishi." },
   { av: "MN", nm: "Madina Nazarova", rl_en: "Director of Operations, StatCom", rl_ru: "Директор по операциям, StatCom", rl_uz: "Operatsiyalar direktori, StatCom", q_en: "The document pipeline cut our processing time by 73%. The team treated accuracy and governance as non-negotiable.", q_ru: "Конвейер документов сократил время обработки на 73%. Команда относилась к точности и управлению как к неоспоримым требованиям.", q_uz: "Hujjat quvuri qayta ishlash vaqtimizni 73% ga qisqartirdi. Jamoa aniqlik va boshqaruvni muhokama qilib bo'lmaydigan talablar sifatida qaradi." },
 ];
+
+const SOL_ANIM = ["bars", "map", "orbit", "radar", "grid"];
 
 const prefersReduced = () =>
   typeof window !== "undefined" &&
@@ -466,7 +469,6 @@ function ShoshiyLogoSVG({ size = 28, theme = "auto" }) {
 const Logo = ({ lang }) => (
   <a href="#top" className="logo magnetic">
     <ShoshiyLogoSVG size={30} />
-    <span className="logo-group">Group</span>
   </a>
 );
 
@@ -599,42 +601,366 @@ function Globe({ start }) {
 function LiveCanvas({ kind }) {
   const ref = useRef(null);
   useEffect(() => {
-    const cv = ref.current, ctx = cv.getContext("2d");
-    let raf;
-    const sz = () => { cv.width = cv.clientWidth * 2; cv.height = cv.clientHeight * 2; ctx.setTransform(2, 0, 0, 2, 0, 0); };
+    const cv = ref.current;
+    if (!cv) return;
+    const ctx = cv.getContext("2d");
+    let raf, visible = false, a = 0;
+
+    const sz = () => {
+      cv.width = cv.clientWidth * 2; cv.height = cv.clientHeight * 2;
+      ctx.setTransform(2, 0, 0, 2, 0, 0);
+    };
     sz(); addEventListener("resize", sz);
-    const W = () => cv.clientWidth, H = () => cv.clientHeight;
-    let a = 0;
+
+    // Per-kind state (init once)
+    const s = {};
     if (kind === "map") {
-      const nodes = Array.from({ length: 26 }, () => ({ x: Math.random(), y: Math.random() }));
-      const draw = () => {
-        a += 0.004; ctx.clearRect(0, 0, W(), H());
-        ctx.strokeStyle = "rgba(255,255,255,.18)"; ctx.lineWidth = 0.6;
-        for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
-          if (Math.hypot(dx, dy) < 0.22) { ctx.beginPath(); ctx.moveTo(nodes[i].x * W(), nodes[i].y * H()); ctx.lineTo(nodes[j].x * W(), nodes[j].y * H()); ctx.stroke(); }
-        }
-        ctx.fillStyle = "rgba(255,255,255,.85)";
-        nodes.forEach((n, k) => { const pulse = 1 + Math.sin(a * 4 + k) * 0.4; ctx.beginPath(); ctx.arc(n.x * W(), n.y * H(), 1.6 * pulse, 0, 7); ctx.fill(); });
-        raf = requestAnimationFrame(draw);
-      };
-      draw();
-    } else {
-      let pts = Array.from({ length: 40 }, (_, i) => 0.5 + Math.sin(i * 0.5) * 0.2);
-      const draw = () => {
-        a += 0.02; ctx.clearRect(0, 0, W(), H());
-        pts = pts.map((p, i) => 0.5 + Math.sin(i * 0.45 + a) * 0.22 + Math.sin(i * 0.13 + a * 0.6) * 0.12);
-        ctx.beginPath(); pts.forEach((p, i) => { const x = (i / (pts.length - 1)) * W(), y = (1 - p) * H(); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
-        ctx.lineTo(W(), H()); ctx.lineTo(0, H()); ctx.closePath(); ctx.fillStyle = "rgba(255,255,255,.12)"; ctx.fill();
-        ctx.beginPath(); pts.forEach((p, i) => { const x = (i / (pts.length - 1)) * W(), y = (1 - p) * H(); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
-        ctx.strokeStyle = "rgba(255,255,255,.9)"; ctx.lineWidth = 1.6; ctx.stroke();
-        raf = requestAnimationFrame(draw);
-      };
-      draw();
+      s.nodes = Array.from({ length: 24 }, () => ({ x: Math.random(), y: Math.random() }));
+    } else if (kind === "chart") {
+      s.pts = Array.from({ length: 40 }, (_, i) => 0.5 + Math.sin(i * 0.5) * 0.2);
+    } else if (kind === "bars") {
+      s.N = 14;
+      s.h = Array.from({ length: 14 }, () => Math.random());
+      s.t = Array.from({ length: 14 }, () => 0.3 + Math.random() * 0.7);
+    } else if (kind === "pulse") {
+      s.pts = Array.from({ length: 90 }, () => 0.5);
+    } else if (kind === "orbit") {
+      s.rings = [
+        { offset: 0, speed: 1.0 },
+        { offset: Math.PI * 0.7, speed: 0.62 },
+        { offset: Math.PI * 1.4, speed: 0.38 },
+      ];
+    } else if (kind === "dots") {
+      s.b = Array.from({ length: 16 }, () => ({
+        x: Math.random(), y: 1.05 + Math.random() * 0.4,
+        r: 4 + Math.random() * 9, vy: -(0.0008 + Math.random() * 0.0012),
+        ph: Math.random() * Math.PI * 2,
+      }));
+    } else if (kind === "radar") {
+      s.blips = Array.from({ length: 5 }, () => ({
+        ang: Math.random() * Math.PI * 2, d: 0.25 + Math.random() * 0.6, al: 0,
+      }));
+    } else if (kind === "signal") {
+      // stateless
+    } else if (kind === "grid") {
+      // stateless
     }
-    return () => { cancelAnimationFrame(raf); removeEventListener("resize", sz); };
+
+    const draw = () => {
+      if (visible) {
+        const w = cv.clientWidth, h = cv.clientHeight;
+        if (w && h) {
+          ctx.clearRect(0, 0, w, h);
+
+          if (kind === "map") {
+            a += 0.004;
+            const { nodes } = s;
+            ctx.strokeStyle = "rgba(255,255,255,.18)"; ctx.lineWidth = 0.6;
+            for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
+              const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+              if (Math.hypot(dx, dy) < 0.26) {
+                ctx.globalAlpha = 1;
+                ctx.beginPath(); ctx.moveTo(nodes[i].x * w, nodes[i].y * h); ctx.lineTo(nodes[j].x * w, nodes[j].y * h); ctx.stroke();
+              }
+            }
+            ctx.fillStyle = "rgba(255,255,255,.85)";
+            nodes.forEach((n, k) => {
+              const pulse = 1 + Math.sin(a * 4 + k) * 0.4;
+              ctx.globalAlpha = 1;
+              ctx.beginPath(); ctx.arc(n.x * w, n.y * h, 1.6 * pulse, 0, 7); ctx.fill();
+            });
+
+          } else if (kind === "chart") {
+            a += 0.02;
+            s.pts = s.pts.map((p, i) => 0.5 + Math.sin(i * 0.45 + a) * 0.22 + Math.sin(i * 0.13 + a * 0.6) * 0.12);
+            ctx.globalAlpha = 1;
+            ctx.beginPath();
+            s.pts.forEach((p, i) => { const x = (i / (s.pts.length - 1)) * w, y = (1 - p) * h; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
+            ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath(); ctx.fillStyle = "rgba(255,255,255,.12)"; ctx.fill();
+            ctx.beginPath();
+            s.pts.forEach((p, i) => { const x = (i / (s.pts.length - 1)) * w, y = (1 - p) * h; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
+            ctx.strokeStyle = "rgba(255,255,255,.9)"; ctx.lineWidth = 1.6; ctx.stroke();
+
+          } else if (kind === "bars") {
+            a += 0.018;
+            const bw = w / s.N;
+            for (let i = 0; i < s.N; i++) {
+              if (Math.random() < 0.035) s.t[i] = 0.12 + Math.random() * 0.88;
+              s.h[i] += (s.t[i] - s.h[i]) * 0.07;
+              const bh = s.h[i] * h * 0.84;
+              ctx.globalAlpha = 0.22 + s.h[i] * 0.68;
+              ctx.fillStyle = "rgba(255,255,255,1)";
+              ctx.fillRect(i * bw + 2, h - bh, bw - 4, bh);
+            }
+            ctx.globalAlpha = 1;
+
+          } else if (kind === "pulse") {
+            a += 0.022;
+            s.pts.shift();
+            const cycle = (a * 0.9) % (Math.PI * 2), cp = cycle / (Math.PI * 2);
+            let val = 0.5;
+            if (cp < 0.05) val = 0.5 - 0.38 * Math.sin(cp / 0.05 * Math.PI);
+            else if (cp < 0.14) val = 0.5 + 0.44 * Math.sin((cp - 0.05) / 0.09 * Math.PI);
+            else if (cp < 0.20) val = 0.5 - 0.15 * Math.sin((cp - 0.14) / 0.06 * Math.PI);
+            else val = 0.5 + Math.sin(a * 0.8) * 0.03;
+            s.pts.push(val);
+            ctx.globalAlpha = 1;
+            ctx.beginPath();
+            s.pts.forEach((p, i) => { const x = (i / (s.pts.length - 1)) * w, y = p * h; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
+            ctx.strokeStyle = "rgba(255,255,255,.9)"; ctx.lineWidth = 1.8; ctx.stroke();
+            ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath(); ctx.fillStyle = "rgba(255,255,255,.07)"; ctx.fill();
+
+          } else if (kind === "orbit") {
+            a += 0.012;
+            const cx = w / 2, cy = h / 2, maxR = Math.min(w, h) * 0.42;
+            const radii = [maxR * 0.28, maxR * 0.56, maxR * 0.84];
+            ctx.globalAlpha = 0.85; ctx.fillStyle = "rgba(255,255,255,.9)";
+            ctx.beginPath(); ctx.arc(cx, cy, 2.5, 0, 7); ctx.fill();
+            s.rings.forEach((ring, ri) => {
+              const r = radii[ri];
+              ctx.globalAlpha = 0.1; ctx.strokeStyle = "rgba(255,255,255,1)"; ctx.lineWidth = 0.5;
+              ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.stroke();
+              const TRAIL = 10;
+              for (let t = TRAIL; t >= 0; t--) {
+                const ang = a * ring.speed + ring.offset - t * 0.14;
+                ctx.globalAlpha = ((TRAIL - t) / TRAIL) * 0.9;
+                ctx.fillStyle = "rgba(255,255,255,1)";
+                ctx.beginPath(); ctx.arc(cx + Math.cos(ang) * r, cy + Math.sin(ang) * r, Math.max(0.4, 2.2 - t * 0.18), 0, 7); ctx.fill();
+              }
+            });
+            ctx.globalAlpha = 1;
+
+          } else if (kind === "dots") {
+            a += 0.015;
+            s.b.forEach(b => {
+              b.y += b.vy;
+              if (b.y < -0.12) { b.y = 1.08; b.x = Math.random(); b.r = 4 + Math.random() * 9; }
+              const sway = Math.sin(a * 1.2 + b.ph) * 0.022;
+              const al = 0.06 + Math.abs(Math.sin(a * 1.5 + b.ph)) * 0.18;
+              ctx.globalAlpha = al; ctx.strokeStyle = "rgba(255,255,255,.9)"; ctx.lineWidth = 1;
+              ctx.beginPath(); ctx.arc((b.x + sway) * w, b.y * h, b.r, 0, Math.PI * 2); ctx.stroke();
+            });
+            ctx.globalAlpha = 1;
+
+          } else if (kind === "radar") {
+            a += 0.012;
+            const cx = w / 2, cy = h / 2, R = Math.min(w, h) * 0.42;
+            [0.33, 0.66, 1].forEach(f => {
+              ctx.globalAlpha = 0.1; ctx.strokeStyle = "rgba(255,255,255,1)"; ctx.lineWidth = 0.5;
+              ctx.beginPath(); ctx.arc(cx, cy, R * f, 0, 7); ctx.stroke();
+            });
+            ctx.globalAlpha = 0.08;
+            ctx.beginPath(); ctx.moveTo(cx - R, cy); ctx.lineTo(cx + R, cy); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(cx, cy - R); ctx.lineTo(cx, cy + R); ctx.stroke();
+            const sweep = a * 1.05;
+            ctx.save();
+            ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, R, sweep - Math.PI * 0.3, sweep); ctx.closePath();
+            ctx.fillStyle = "rgba(255,255,255,.1)"; ctx.globalAlpha = 1; ctx.fill(); ctx.restore();
+            ctx.globalAlpha = 0.75; ctx.strokeStyle = "rgba(255,255,255,.8)"; ctx.lineWidth = 1.2;
+            ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.cos(sweep) * R, cy + Math.sin(sweep) * R); ctx.stroke();
+            s.blips.forEach(b => {
+              const diff = ((sweep - b.ang) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
+              if (diff < 0.1) b.al = 1;
+              b.al *= 0.972;
+              if (b.al > 0.04) {
+                ctx.globalAlpha = b.al; ctx.fillStyle = "rgba(255,255,255,1)";
+                ctx.beginPath(); ctx.arc(cx + Math.cos(b.ang) * R * b.d, cy + Math.sin(b.ang) * R * b.d, 2.5, 0, 7); ctx.fill();
+              }
+            });
+            ctx.globalAlpha = 1;
+
+          } else if (kind === "signal") {
+            a += 0.015;
+            const cx = w / 2, cy = h * 0.68, maxR = Math.min(w, h) * 0.4;
+            [0.28, 0.54, 0.80, 1.0].forEach((f, i) => {
+              const pulse = (Math.sin(a * 2.2 - i * 1.0) + 1) / 2;
+              ctx.globalAlpha = 0.12 + pulse * 0.72;
+              ctx.strokeStyle = "rgba(255,255,255,1)"; ctx.lineWidth = 1.6;
+              ctx.beginPath(); ctx.arc(cx, cy, maxR * f, -Math.PI * 0.82, -Math.PI * 0.18); ctx.stroke();
+            });
+            ctx.globalAlpha = 0.9; ctx.fillStyle = "rgba(255,255,255,.9)";
+            ctx.beginPath(); ctx.arc(cx, cy, 3, 0, 7); ctx.fill();
+            ctx.globalAlpha = 1;
+
+          } else if (kind === "grid") {
+            a += 0.008;
+            const COLS = 8, ROWS = 6, cw = w / COLS, ch = h / ROWS;
+            ctx.globalAlpha = 0.1; ctx.strokeStyle = "rgba(255,255,255,1)"; ctx.lineWidth = 0.5;
+            for (let i = 0; i <= COLS; i++) { ctx.beginPath(); ctx.moveTo(i * cw, 0); ctx.lineTo(i * cw, h); ctx.stroke(); }
+            for (let j = 0; j <= ROWS; j++) { ctx.beginPath(); ctx.moveTo(0, j * ch); ctx.lineTo(w, j * ch); ctx.stroke(); }
+            const scanY = ((Math.sin(a * 0.5) + 1) / 2) * h;
+            const sg = ctx.createLinearGradient(0, scanY - 28, 0, scanY + 28);
+            sg.addColorStop(0, "rgba(255,255,255,0)"); sg.addColorStop(0.5, "rgba(255,255,255,.32)"); sg.addColorStop(1, "rgba(255,255,255,0)");
+            ctx.fillStyle = sg; ctx.globalAlpha = 1; ctx.fillRect(0, scanY - 28, w, 56);
+            for (let ci = 0; ci < COLS; ci++) for (let ri = 0; ri < ROWS; ri++) {
+              const dist = Math.abs((ri + 0.5) * ch - scanY);
+              if (dist < ch) { ctx.globalAlpha = (1 - dist / ch) * 0.28; ctx.fillStyle = "rgba(255,255,255,1)"; ctx.fillRect(ci * cw + 1, ri * ch + 1, cw - 2, ch - 2); }
+            }
+            const mk = 7;
+            ctx.globalAlpha = 0.6; ctx.strokeStyle = "rgba(255,255,255,.8)"; ctx.lineWidth = 1.5;
+            [[0, 0, 1, 1], [COLS, 0, -1, 1], [0, ROWS, 1, -1], [COLS, ROWS, -1, -1]].forEach(([ci, ri, dx, dy]) => {
+              const x = ci * cw, y = ri * ch;
+              ctx.beginPath(); ctx.moveTo(x, y + dy * mk); ctx.lineTo(x, y); ctx.lineTo(x + dx * mk, y); ctx.stroke();
+            });
+            ctx.globalAlpha = 1;
+          }
+        }
+      }
+      raf = requestAnimationFrame(draw);
+    };
+
+    const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { threshold: 0.01 });
+    io.observe(cv);
+    raf = requestAnimationFrame(draw);
+    return () => { cancelAnimationFrame(raf); removeEventListener("resize", sz); io.disconnect(); };
   }, [kind]);
   return <canvas className="live" ref={ref} />;
+}
+
+/* ─── SolCanvas — solutions section themed animations ─── */
+function SolCanvas({ kind }) {
+  const ref = useRef(null);
+  const accent = useAccent();
+  useEffect(() => {
+    const cv = ref.current;
+    if (!cv) return;
+    const ctx = cv.getContext("2d");
+    let raf, a = 0;
+
+    const sz = () => {
+      const w = cv.clientWidth, h = cv.clientHeight;
+      if (!w || !h) return;
+      cv.width = w * 2; cv.height = h * 2;
+      ctx.setTransform(2, 0, 0, 2, 0, 0);
+    };
+    sz();
+    addEventListener("resize", sz);
+
+    const s = {};
+    if (kind === "bars") {
+      s.N = 18; s.h = Array.from({ length: 18 }, () => Math.random()); s.t = Array.from({ length: 18 }, () => 0.15 + Math.random() * 0.85);
+    } else if (kind === "map") {
+      s.nodes = Array.from({ length: 22 }, () => ({ x: Math.random(), y: Math.random() }));
+    } else if (kind === "orbit") {
+      s.rings = [{ offset: 0, speed: 1.0 }, { offset: Math.PI * 0.7, speed: 0.6 }, { offset: Math.PI * 1.4, speed: 0.35 }];
+    } else if (kind === "radar") {
+      s.blips = Array.from({ length: 5 }, () => ({ ang: Math.random() * Math.PI * 2, d: 0.28 + Math.random() * 0.58, al: 0 }));
+    }
+
+    const draw = () => {
+      const w = cv.clientWidth, h = cv.clientHeight;
+      if (w && h) {
+        if (cv.width !== w * 2) sz();
+        ctx.clearRect(0, 0, w, h);
+        const col = accent();
+
+        if (kind === "bars") {
+          a += 0.016;
+          const bw = w / s.N;
+          for (let i = 0; i < s.N; i++) {
+            if (Math.random() < 0.03) s.t[i] = 0.1 + Math.random() * 0.9;
+            s.h[i] += (s.t[i] - s.h[i]) * 0.07;
+            const bh = s.h[i] * h * 0.8;
+            ctx.globalAlpha = 0.18 + s.h[i] * 0.52;
+            ctx.fillStyle = col;
+            ctx.fillRect(i * bw + 2, h - bh, bw - 4, bh);
+          }
+          ctx.globalAlpha = 1;
+
+        } else if (kind === "map") {
+          a += 0.004;
+          ctx.strokeStyle = col; ctx.lineWidth = 0.7;
+          for (let i = 0; i < s.nodes.length; i++) for (let j = i + 1; j < s.nodes.length; j++) {
+            const dx = s.nodes[i].x - s.nodes[j].x, dy = s.nodes[i].y - s.nodes[j].y;
+            if (Math.hypot(dx, dy) < 0.28) {
+              ctx.globalAlpha = 0.2;
+              ctx.beginPath(); ctx.moveTo(s.nodes[i].x * w, s.nodes[i].y * h); ctx.lineTo(s.nodes[j].x * w, s.nodes[j].y * h); ctx.stroke();
+            }
+          }
+          s.nodes.forEach((n, k) => {
+            const pulse = 1 + Math.sin(a * 3.5 + k) * 0.4;
+            ctx.globalAlpha = 0.65; ctx.fillStyle = col;
+            ctx.beginPath(); ctx.arc(n.x * w, n.y * h, 2.2 * pulse, 0, 7); ctx.fill();
+          });
+          ctx.globalAlpha = 1;
+
+        } else if (kind === "orbit") {
+          a += 0.01;
+          const cx = w / 2, cy = h / 2, maxR = Math.min(w, h) * 0.36;
+          const radii = [maxR * 0.28, maxR * 0.56, maxR * 0.84];
+          ctx.globalAlpha = 0.9; ctx.fillStyle = col;
+          ctx.beginPath(); ctx.arc(cx, cy, 3, 0, 7); ctx.fill();
+          s.rings.forEach((ring, ri) => {
+            const r = radii[ri];
+            ctx.globalAlpha = 0.1; ctx.strokeStyle = col; ctx.lineWidth = 0.5;
+            ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.stroke();
+            const TRAIL = 9;
+            for (let t = TRAIL; t >= 0; t--) {
+              const ang = a * ring.speed + ring.offset - t * 0.14;
+              ctx.globalAlpha = ((TRAIL - t) / TRAIL) * 0.85;
+              ctx.fillStyle = col;
+              ctx.beginPath(); ctx.arc(cx + Math.cos(ang) * r, cy + Math.sin(ang) * r, Math.max(0.4, 2.4 - t * 0.2), 0, 7); ctx.fill();
+            }
+          });
+          ctx.globalAlpha = 1;
+
+        } else if (kind === "radar") {
+          a += 0.01;
+          const cx = w / 2, cy = h / 2, R = Math.min(w, h) * 0.36;
+          [0.33, 0.66, 1].forEach(f => {
+            ctx.globalAlpha = 0.12; ctx.strokeStyle = col; ctx.lineWidth = 0.5;
+            ctx.beginPath(); ctx.arc(cx, cy, R * f, 0, 7); ctx.stroke();
+          });
+          ctx.globalAlpha = 0.08;
+          ctx.beginPath(); ctx.moveTo(cx - R, cy); ctx.lineTo(cx + R, cy); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(cx, cy - R); ctx.lineTo(cx, cy + R); ctx.stroke();
+          const sweep = a;
+          ctx.save();
+          ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, R, sweep - Math.PI * 0.28, sweep); ctx.closePath();
+          ctx.fillStyle = col; ctx.globalAlpha = 0.14; ctx.fill(); ctx.restore();
+          ctx.globalAlpha = 0.7; ctx.strokeStyle = col; ctx.lineWidth = 1.3;
+          ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.cos(sweep) * R, cy + Math.sin(sweep) * R); ctx.stroke();
+          s.blips.forEach(b => {
+            const diff = ((sweep - b.ang) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
+            if (diff < 0.09) b.al = 1;
+            b.al *= 0.972;
+            if (b.al > 0.04) {
+              ctx.globalAlpha = b.al; ctx.fillStyle = col;
+              ctx.beginPath(); ctx.arc(cx + Math.cos(b.ang) * R * b.d, cy + Math.sin(b.ang) * R * b.d, 3, 0, 7); ctx.fill();
+            }
+          });
+          ctx.globalAlpha = 1;
+
+        } else if (kind === "grid") {
+          a += 0.006;
+          const COLS = 8, ROWS = 5, cw = w / COLS, ch = h / ROWS;
+          ctx.globalAlpha = 0.1; ctx.strokeStyle = col; ctx.lineWidth = 0.5;
+          for (let i = 0; i <= COLS; i++) { ctx.beginPath(); ctx.moveTo(i * cw, 0); ctx.lineTo(i * cw, h); ctx.stroke(); }
+          for (let j = 0; j <= ROWS; j++) { ctx.beginPath(); ctx.moveTo(0, j * ch); ctx.lineTo(w, j * ch); ctx.stroke(); }
+          const scanY = ((Math.sin(a * 0.4) + 1) / 2) * h;
+          ctx.globalAlpha = 0.35; ctx.fillStyle = col; ctx.fillRect(0, scanY - 1.5, w, 3);
+          for (let ci = 0; ci < COLS; ci++) for (let ri = 0; ri < ROWS; ri++) {
+            const dist = Math.abs((ri + 0.5) * ch - scanY);
+            if (dist < ch * 1.4) {
+              ctx.globalAlpha = (1 - dist / (ch * 1.4)) * 0.2;
+              ctx.fillStyle = col; ctx.fillRect(ci * cw + 1, ri * ch + 1, cw - 2, ch - 2);
+            }
+          }
+          const mk = 8;
+          ctx.globalAlpha = 0.55; ctx.strokeStyle = col; ctx.lineWidth = 1.5;
+          [[0, 0, 1, 1], [COLS, 0, -1, 1], [0, ROWS, 1, -1], [COLS, ROWS, -1, -1]].forEach(([ci, ri, dx, dy]) => {
+            const x = ci * cw, y = ri * ch;
+            ctx.beginPath(); ctx.moveTo(x, y + dy * mk); ctx.lineTo(x, y); ctx.lineTo(x + dx * mk, y); ctx.stroke();
+          });
+          ctx.globalAlpha = 1;
+        }
+      }
+      raf = requestAnimationFrame(draw);
+    };
+    draw();
+    return () => { cancelAnimationFrame(raf); removeEventListener("resize", sz); };
+  }, [kind, accent]);
+  return <canvas className="sol-live" ref={ref} />;
 }
 
 /* ─── Scramble ─── */
@@ -732,7 +1058,7 @@ function LangSwitcher({ lang, setLang, open, setOpen }) {
 export default function App() {
   const [loaded, setLoaded] = useState(false);
   const [theme, setTheme] = useState("dark");
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("ru");
   const [langOpen, setLangOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -952,7 +1278,7 @@ export default function App() {
               <div className="sol-panels">
                 {solutions.map((s, i) => (
                   <div key={i} className={`sol-panel ${activeSol === i ? "active" : ""}`}>
-                    <div className="visual"><div className="mesh" /><div className="orb" /><span className="tag">{s.tag}</span></div>
+                    <div className="visual"><div className="mesh" /><SolCanvas kind={SOL_ANIM[i]} /><span className="tag">{s.tag}</span></div>
                     <h3>{s.h}</h3><p>{s.p}</p>
                     <ul className="sol-feats">{s.f.map((x) => <li key={x}><Check size={18} />{x}</li>)}</ul>
                   </div>
@@ -1136,7 +1462,7 @@ export default function App() {
                 </button>
                 {formState === "error" && (
                   <p style={{ textAlign: "center", fontSize: ".88rem", color: "var(--text-3)", marginTop: 10 }}>
-                    <a href="mailto:hello@shoshiy.uz" style={{ color: "var(--accent-soft)" }}>hello@shoshiy.uz</a>
+                    <a href="https://mail.google.com/mail/?view=cm&to=info.shoshiy@gmail.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-soft)" }}>info.shoshiy@gmail.com</a>
                   </p>
                 )}
 
@@ -1159,28 +1485,33 @@ export default function App() {
                     <div className="ic"><Mail size={19} /></div>
                     <div>
                       <div className="k">{t.contact_email}</div>
-                      <div className="v"><a href="mailto:hello@shoshiy.uz">hello@shoshiy.uz</a></div>
+                      <div className="v"><a href="https://mail.google.com/mail/?view=cm&to=info.shoshiy@gmail.com" target="_blank" rel="noopener noreferrer">info.shoshiy@gmail.com</a></div>
                     </div>
                   </div>
                   <div className="info-row">
                     <div className="ic"><Phone size={19} /></div>
                     <div>
                       <div className="k">{t.contact_phone}</div>
-                      <div className="v"><a href="tel:+998712001166">+998 71 200 11 66</a></div>
+                      <div className="v"><a href="tel:+998330493349">+998 33 049 33 49</a></div>
                     </div>
                   </div>
                   <div className="info-row">
                     <div className="ic"><MapPin size={19} /></div>
                     <div>
                       <div className="k">{t.contact_office}</div>
-                      <div className="v">Tashkent, Uzbekistan</div>
+                      <div className="v">улица Укчи, 6, Ташкент</div>
                     </div>
                   </div>
                 </Reveal>
                 <Reveal className="map" delay={2}>
-                  <div className="mesh" />
-                  <div className="pin" />
-                  <div className="place">Shoshiy Group · Tashkent</div>
+                  <iframe
+                    title="Shoshiy Group"
+                    src="https://maps.google.com/maps?q=41.317233,69.245286&z=17&hl=ru&output=embed"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0, display: "block" }}
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                  <div className="place">Shoshiy Group · улица Укчи, 6</div>
                 </Reveal>
               </div>
             </div>
@@ -1229,19 +1560,19 @@ export default function App() {
             </div>
             <div className="foot-col">
               <h4>{t.footer_connect}</h4>
-              <a href="https://www.linkedin.com/company/shoshiy" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://github.com/shoshiy" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://t.me/shoshiy_group" target="_blank" rel="noopener noreferrer">Telegram</a>
+              <a href="https://www.linkedin.com/in/shoshiy-group-4976a03a0/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://github.com/phanthooom" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://t.me/mechtatel_s49" target="_blank" rel="noopener noreferrer">Telegram</a>
               <a href="https://logistics.shoshiy.uz/" target="_blank" rel="noopener noreferrer">Shoshiy Logistics</a>
-              <a href="mailto:hello@shoshiy.uz">hello@shoshiy.uz</a>
+              <a href="https://mail.google.com/mail/?view=cm&to=info.shoshiy@gmail.com" target="_blank" rel="noopener noreferrer">info.shoshiy@gmail.com</a>
             </div>
           </div>
           <div className="foot-bottom">
             <span>{t.copyright}</span>
             <div className="socials">
-              <a href="https://www.linkedin.com/company/shoshiy" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>
-              <a href="https://github.com/shoshiy" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={17} /></a>
-              <a href="https://t.me/shoshiy_group" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><Send size={17} /></a>
+              <a href="https://www.linkedin.com/in/shoshiy-group-4976a03a0/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>
+              <a href="https://github.com/phanthooom" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={17} /></a>
+              <a href="https://t.me/mechtatel_s49" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><Send size={17} /></a>
             </div>
           </div>
         </div>

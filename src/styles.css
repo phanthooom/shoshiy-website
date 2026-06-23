@@ -1090,6 +1090,15 @@ section {
     box-shadow: 0 0 80px var(--glow)
 }
 
+.sol-panel .visual .sol-live {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: .7
+}
+
 .sol-panel .visual .tag {
     position: absolute;
     left: 24px;
@@ -1097,7 +1106,8 @@ section {
     font-size: .8rem;
     letter-spacing: .1em;
     text-transform: uppercase;
-    color: var(--text-3)
+    color: var(--text-3);
+    z-index: 2
 }
 
 .sol-panel h3 {
@@ -1531,6 +1541,21 @@ section {
     transition: border-color .25s, box-shadow .25s
 }
 
+.field select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer
+}
+
+.field select option {
+    background: var(--surface-2);
+    color: var(--text)
+}
+
 .field input:focus,
 .field textarea:focus,
 .field select:focus {
@@ -1598,7 +1623,7 @@ section {
 
 .map {
     flex: 1;
-    min-height: 220px;
+    min-height: 280px;
     border-radius: var(--r-xl);
     border: 1px solid var(--line);
     overflow: hidden;
@@ -1606,55 +1631,20 @@ section {
     background: var(--surface-2)
 }
 
-.map .mesh {
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 30px 30px
-}
-
-.map .pin {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 6px var(--accent-ghost), 0 0 0 14px color-mix(in oklch, var(--accent) 12%, transparent)
-}
-
-.map .pin::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: ping 2s var(--ease-q) infinite
-}
-
-@keyframes ping {
-    0% {
-        transform: scale(1);
-        opacity: .7
-    }
-
-    100% {
-        transform: scale(3.4);
-        opacity: 0
-    }
-}
-
 .map .place {
     position: absolute;
-    left: 50%;
-    top: calc(50% + 22px);
-    transform: translateX(-50%);
-    font-size: .82rem;
-    font-weight: 500;
-    color: var(--text-2);
-    white-space: nowrap
+    bottom: 14px;
+    left: 14px;
+    z-index: 2;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    background: rgba(0,0,0,.62);
+    padding: 6px 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    pointer-events: none
 }
 
 .dl {
@@ -1856,7 +1846,7 @@ footer {
     }
 }
 
-@media(max-width:760px) {
+@media(max-width:900px) {
     .nav-links {
         display: none
     }
@@ -1881,6 +1871,12 @@ footer {
 
     .nav-links.open a {
         width: 100%
+    }
+}
+
+@media(max-width:760px) {
+    .nav-actions .btn-primary {
+        display: none
     }
 
     .svc-grid {
