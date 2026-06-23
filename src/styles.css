@@ -859,12 +859,16 @@ html[data-theme="light"] .theme-toggle-thumb {
     opacity: .6;
     letter-spacing: -.02em;
     white-space: nowrap;
-    transition: opacity .3s, color .3s
+    padding: 5px 16px;
+    border-radius: 100px;
+    transition: opacity .3s, color .3s, background .3s, transform .3s var(--ease-q)
 }
 
 .marquee span:hover {
     opacity: 1;
-    color: var(--text-2)
+    color: #0a0a14;
+    background: #fff;
+    transform: scale(1.06)
 }
 
 @keyframes scroll-x {
