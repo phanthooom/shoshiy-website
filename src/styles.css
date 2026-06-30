@@ -653,7 +653,7 @@ html[data-theme="light"] .theme-toggle-thumb {
 }
 
 .hero h1 {
-    font-size: clamp(2.7rem, 6.2vw, 5.1rem);
+    font-size: clamp(2.1rem, 7vw, 5.1rem);
     font-weight: 800;
     margin: 22px 0 0
 }
@@ -1883,6 +1883,21 @@ footer {
         display: none
     }
 
+    .nav {
+        padding: 8px 14px;
+        gap: 14px;
+    }
+
+    .logo {
+        font-size: 1.05rem;
+        gap: 8px;
+    }
+
+    .logo .mark svg {
+        width: 24px;
+        height: 24px;
+    }
+
     .svc-grid {
         grid-template-columns: 1fr
     }
@@ -1914,6 +1929,39 @@ footer {
 
     .hero-stats {
         gap: 26px
+    }
+}
+
+@media(max-width:600px) {
+    .bento {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+    
+    .case {
+        min-height: 220px;
+    }
+
+    .case.lg {
+        grid-column: span 1
+    }
+
+    .ach-grid {
+        grid-template-columns: 1fr
+    }
+
+    .foot-grid {
+        grid-template-columns: 1fr
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
