@@ -1265,7 +1265,9 @@ export default function App() {
                   <button 
                     key={tab} 
                     className={`sol-tab ${activeSol === i ? "active" : ""}`} 
+                    onMouseDown={(e) => e.preventDefault()}
                     onClick={(e) => {
+                      e.target.blur();
                       setActiveSol(i);
                       const btn = e.target;
                       const nav = btn.parentElement;
@@ -1278,6 +1280,7 @@ export default function App() {
                     {tab}
                   </button>
                 ))}
+                <div style={{ flex: "0 0 40px" }} />
               </div>
               <div className="sol-panels">
                 {solutions.map((s, i) => (

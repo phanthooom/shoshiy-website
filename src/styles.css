@@ -1827,6 +1827,7 @@ footer {
         -ms-overflow-style: none;  /* IE and Edge */
         min-width: 0;
         width: 100%;
+        max-width: 100%;
     }
 
     .sol-nav::-webkit-scrollbar {
