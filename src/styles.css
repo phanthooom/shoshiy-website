@@ -1969,12 +1969,15 @@ footer {
     }
 
     .bento {
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
     
     .case {
         min-height: 220px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .case.lg {
