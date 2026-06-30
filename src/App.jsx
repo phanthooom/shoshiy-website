@@ -441,27 +441,19 @@ function ShoshiyLogoSVG({ size = 28, theme = "auto" }) {
       viewBox="0 0 220 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ height: size, width: "auto", display: "block" }}
+      style={{ height: size, width: "auto", display: "block", margin: "0 auto" }}
       aria-label="Shoshiy Group"
     >
-      {/* S - accent blue */}
       <text
-        x="0" y="42"
+        x="50%" y="42"
+        textAnchor="middle"
         fontFamily="Inter Tight, Arial, sans-serif"
         fontWeight="800"
         fontSize="48"
-        fill="var(--accent-soft)"
         letterSpacing="-2"
-      >S</text>
-      {/* hoshiy - currentColor */}
-      <text
-        x="31" y="42"
-        fontFamily="Inter Tight, Arial, sans-serif"
-        fontWeight="800"
-        fontSize="48"
-        fill="currentColor"
-        letterSpacing="-2"
-      >hoshiy</text>
+      >
+        <tspan fill="var(--accent-soft)">S</tspan><tspan fill="currentColor">hoshiy</tspan>
+      </text>
     </svg>
   );
 }
