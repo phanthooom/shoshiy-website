@@ -1942,6 +1942,22 @@ footer {
         grid-template-columns: 1fr
     }
 
+    .contact-card,
+    .contact-info {
+        padding: 24px;
+    }
+
+    .dl {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px;
+    }
+
+    .dl .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
     .two {
         grid-template-columns: 1fr
     }
