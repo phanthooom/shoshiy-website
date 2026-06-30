@@ -1471,7 +1471,8 @@ section {
     font-weight: 700;
     color: var(--on-accent);
     background: var(--accent);
-    font-size: 1.05rem
+    font-size: 1.05rem;
+    flex-shrink: 0;
 }
 
 .testi .nm {
@@ -1990,6 +1991,14 @@ footer {
 
     .case.lg {
         grid-column: span 1
+    }
+
+    .testi {
+        padding: 24px 20px;
+    }
+
+    .testi .quote {
+        font-size: 1.15rem;
     }
 
     .ach-grid {
