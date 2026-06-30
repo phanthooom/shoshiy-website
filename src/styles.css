@@ -1825,6 +1825,8 @@ footer {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none;  /* IE and Edge */
+        min-width: 0;
+        width: 100%;
     }
 
     .sol-nav::-webkit-scrollbar {
