@@ -1054,7 +1054,6 @@ export default function App() {
   const [langOpen, setLangOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [hideNav, setHideNav] = useState(false);
   const [progress, setProgress] = useState(0);
   const [activeSol, setActiveSol] = useState(0);
   const [activeNav, setActiveNav] = useState(0);
@@ -1076,7 +1075,6 @@ export default function App() {
     const onScroll = () => {
       const y = scrollY;
       setScrolled(y > 20);
-      setHideNav(y > lastY.current && y > 400);
       lastY.current = y;
       setProgress((y / (document.body.scrollHeight - innerHeight)) * 100);
     };
@@ -1156,7 +1154,7 @@ export default function App() {
       </nav>
 
       {/* Header */}
-      <header className={`${scrolled ? "scrolled" : ""} ${hideNav ? "hide" : ""}`}>
+      <header className={`${scrolled ? "scrolled" : ""}`}>
         <div className="wrap">
           <nav className="nav" role="navigation" aria-label="Main navigation">
             <Logo lang={lang} />
