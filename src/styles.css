@@ -1820,7 +1820,14 @@ footer {
         flex-direction: row;
         overflow-x: auto;
         gap: 0;
-        padding-bottom: 6px
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+    }
+
+    .sol-nav::-webkit-scrollbar {
+        display: none;
     }
 
     .sol-tab {
@@ -1828,12 +1835,13 @@ footer {
         border-left: none;
         border-bottom: 2px solid var(--line-soft);
         padding: 10px 16px;
-        white-space: nowrap
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .sol-tab.active {
         padding-left: 16px;
-        border-bottom-color: var(--accent)
+        border-bottom-color: var(--accent);
     }
 
     .tech,
