@@ -1376,7 +1376,7 @@ export default function App() {
               <h2 style={{ marginTop: 18 }}>{t.clients_h}</h2>
             </Reveal>
             <div className="testi-wrap">
-              <div className="testi-track" style={{ transform: `translateX(-${clampedTi * (100 / perView())}%)` }}>
+              <div className="testi-track" style={{ transform: `translateX(calc(-${clampedTi} * (100% / ${perView()} + ${20 / perView()}px)))` }}>
                 {TESTI_DATA.map((td) => (
                   <article className="testi" key={td.nm}>
                     <p className="quote">"{td[`q_${lang}`] || td.q_en}"</p>
