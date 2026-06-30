@@ -1262,7 +1262,16 @@ export default function App() {
             <div className="sol">
               <div className="sol-nav">
                 {t.sol_tabs.map((tab, i) => (
-                  <button key={tab} className={`sol-tab ${activeSol === i ? "active" : ""}`} onClick={() => setActiveSol(i)}>{tab}</button>
+                  <button 
+                    key={tab} 
+                    className={`sol-tab ${activeSol === i ? "active" : ""}`} 
+                    onClick={(e) => {
+                      setActiveSol(i);
+                      e.target.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                    }}
+                  >
+                    {tab}
+                  </button>
                 ))}
               </div>
               <div className="sol-panels">
