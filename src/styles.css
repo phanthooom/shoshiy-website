@@ -1632,7 +1632,10 @@ section {
     border: 1px solid var(--line);
     overflow: hidden;
     position: relative;
-    background: var(--surface-2)
+    background: var(--surface-2);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .map .place {
