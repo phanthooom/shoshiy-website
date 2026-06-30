@@ -1267,7 +1267,12 @@ export default function App() {
                     className={`sol-tab ${activeSol === i ? "active" : ""}`} 
                     onClick={(e) => {
                       setActiveSol(i);
-                      e.target.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                      const btn = e.target;
+                      const nav = btn.parentElement;
+                      if (nav) {
+                        const scrollLeft = btn.offsetLeft - nav.offsetWidth / 2 + btn.offsetWidth / 2;
+                        nav.scrollTo({ left: scrollLeft, behavior: "smooth" });
+                      }
                     }}
                   >
                     {tab}
