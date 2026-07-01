@@ -854,24 +854,21 @@ html[data-theme="light"] .theme-toggle-thumb {
     animation-play-state: paused
 }
 
-.marquee span {
-    font-family: "Inter Tight";
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--text-3);
-    opacity: .6;
-    letter-spacing: -.02em;
+.marquee-logo {
     white-space: nowrap;
     padding: 5px 16px;
     border-radius: 100px;
-    transition: opacity .3s, color .3s, background .3s, transform .3s var(--ease-q)
+    opacity: 0.6;
+    transition: opacity .3s, background .3s, transform .3s var(--ease-q);
+    cursor: default;
+    filter: grayscale(100%);
 }
 
-.marquee span:hover {
+.marquee-logo:hover {
     opacity: 1;
-    color: #0a0a14;
     background: #fff;
-    transform: scale(1.06)
+    transform: scale(1.06);
+    filter: grayscale(0%);
 }
 
 @keyframes scroll-x {
