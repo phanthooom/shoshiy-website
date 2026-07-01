@@ -855,17 +855,22 @@ html[data-theme="light"] .theme-toggle-thumb {
 }
 
 .marquee-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     white-space: nowrap;
     padding: 5px 16px;
     border-radius: 100px;
     opacity: 0.6;
-    transition: opacity .3s, background .3s, transform .3s var(--ease-q);
+    color: var(--text-3);
+    transition: opacity .3s, background .3s, transform .3s var(--ease-q), color .3s, filter .3s;
     cursor: default;
     filter: grayscale(100%);
 }
 
 .marquee-logo:hover {
     opacity: 1;
+    color: #0a0a14;
     background: #fff;
     transform: scale(1.06);
     filter: grayscale(0%);
