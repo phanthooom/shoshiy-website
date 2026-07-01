@@ -1823,11 +1823,14 @@ footer {
         gap: 0;
         padding-bottom: 6px;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
         min-width: 0;
-        width: 100%;
-        max-width: 100%;
+        width: calc(100% + 40px);
+        max-width: none;
+        margin-left: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .sol-nav::-webkit-scrollbar {
@@ -1836,12 +1839,18 @@ footer {
 
     .sol-nav::after {
         content: "";
-        flex: 0 0 50px;
+        flex: 0 0 20px;
     }
 
     .sol-panel .visual .mesh {
         -webkit-mask-image: none;
         mask-image: none;
+    }
+
+    .sol-panel h3 {
+        font-size: 1.45rem;
+        word-break: break-word;
+        hyphens: auto;
     }
 
     .sol-tab {
