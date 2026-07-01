@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" width="480" height="140">
+  <g transform="translate(10, 10)">
+    <circle cx="60" cy="60" r="45" fill="none" stroke="#0072CE" stroke-width="4" />
+    <path d="M 15 60 A 45 20 0 0 0 105 60" fill="none" stroke="#0072CE" stroke-width="2" stroke-dasharray="4,4" />
+    <path d="M 60 15 A 20 45 0 0 0 60 105" fill="none" stroke="#0072CE" stroke-width="2" stroke-dasharray="4,4" />
+    <ellipse cx="60" cy="60" rx="55" ry="18" fill="none" stroke="#00C853" stroke-width="3" transform="rotate(-30 60 60)" />
+    <g transform="translate(95, 25)">
+      <rect x="-6" y="-6" width="12" height="12" rx="2" fill="#FFFFFF" />
+      <line x1="-12" y1="0" x2="-6" y2="0" stroke="#FFFFFF" stroke-width="2" />
+      <line x1="6" y1="0" x2="12" y2="0" stroke="#FFFFFF" stroke-width="2" />
+      <rect x="-18" y="-4" width="6" height="8" rx="1" fill="#00C853" />
+      <rect x="12" y="-4" width="6" height="8" rx="1" fill="#00C853" />
+    </g>
+  </g>
+  <text x="140" y="65" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF" letter-spacing="1">SPACE MONITORING</text>
+  <text x="140" y="100" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#00C853" letter-spacing="4">CENTER</text>
+</svg>

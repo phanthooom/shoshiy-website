@@ -4,6 +4,8 @@ import itparkLogo from "./assets/logos/itpark.svg";
 import mygovLogo from "./assets/logos/mygov.svg";
 import agrobankLogo from "./assets/logos/agrobank.svg";
 import cbuLogo from "./assets/logos/cbu.svg";
+import uzspaceLogo from "./assets/logos/uzspace.svg";
+import spacemcLogo from "./assets/logos/spacemc.svg";
 import emailjs from "@emailjs/browser";
 import "./styles.css";
 
@@ -1230,8 +1232,8 @@ export default function App() {
         <div className="trust" aria-label="Trusted clients">
           <p>{t.trust_label}</p>
           <div className="marquee" aria-hidden="true">
-            {[uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo].concat(
-              [uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo]
+            {[uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo, uzspaceLogo, spacemcLogo].concat(
+              [uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo, uzspaceLogo, spacemcLogo]
             ).map((logoUrl, i) => <img key={i} src={logoUrl} className="marquee-logo-img" alt="Official Partner Logo" />)}
           </div>
         </div>
