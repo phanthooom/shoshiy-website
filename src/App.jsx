@@ -1084,13 +1084,14 @@ export default function App() {
     if (!el) return;
 
     let isDragging = false;
+    let isHovered = false;
     let startX = 0;
     let currentX = 0;
     let animationFrameId = null;
     const speed = 0.8; // px per frame
 
     const loop = () => {
-      if (!isDragging) {
+      if (!isDragging && !isHovered) {
         const oneCopyWidth = el.scrollWidth / 5;
         if (oneCopyWidth > 0) {
           currentX -= speed;
@@ -1162,18 +1163,30 @@ export default function App() {
       el.style.transform = `translate3d(${newX}px, 0, 0)`;
     };
 
+    const onMouseEnter = () => {
+      isHovered = true;
+    };
+
+    const onMouseLeave = () => {
+      isHovered = false;
+    };
+
     el.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
     el.addEventListener('touchstart', onTouchStart, { passive: true });
     window.addEventListener('touchmove', onTouchMove, { passive: false });
     window.addEventListener('touchend', onMouseUp);
+    el.addEventListener('mouseenter', onMouseEnter);
+    el.addEventListener('mouseleave', onMouseLeave);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       if (el) {
         el.removeEventListener('mousedown', onMouseDown);
         el.removeEventListener('touchstart', onTouchStart);
+        el.removeEventListener('mouseenter', onMouseEnter);
+        el.removeEventListener('mouseleave', onMouseLeave);
       }
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
