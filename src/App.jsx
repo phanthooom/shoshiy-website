@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { UztelecomLogo, KadastrLogo, MyGovLogo, AgrobankLogo, ITParkLogo, SoliqLogo, MarkaziyBankLogo } from "./components/Logos";
+import uztelecomLogo from "./assets/logos/uztelecom.svg";
+import itparkLogo from "./assets/logos/itpark.svg";
+import mygovLogo from "./assets/logos/mygov.svg";
+import agrobankLogo from "./assets/logos/agrobank.svg";
+import cbuLogo from "./assets/logos/cbu.svg";
 import emailjs from "@emailjs/browser";
 import "./styles.css";
 
@@ -1226,9 +1230,9 @@ export default function App() {
         <div className="trust" aria-label="Trusted clients">
           <p>{t.trust_label}</p>
           <div className="marquee" aria-hidden="true">
-            {[UztelecomLogo, KadastrLogo, MyGovLogo, AgrobankLogo, ITParkLogo, SoliqLogo, MarkaziyBankLogo].concat(
-              [UztelecomLogo, KadastrLogo, MyGovLogo, AgrobankLogo, ITParkLogo, SoliqLogo, MarkaziyBankLogo]
-            ).map((Comp, i) => <div key={i} className="marquee-logo"><Comp /></div>)}
+            {[uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo].concat(
+              [uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo]
+            ).map((logoUrl, i) => <img key={i} src={logoUrl} className="marquee-logo-img" alt="Official Partner Logo" />)}
           </div>
         </div>
 
