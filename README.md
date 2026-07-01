@@ -4,6 +4,7 @@ Premium corporate site for Shoshiy, ported to React. Single-component architectu
 
 ## Quick start
 
+   
 ```bash
 # 1. scaffold a Vite React app (skip if you already have one)
 npm create vite@latest shoshiy -- --template react
