@@ -1839,6 +1839,11 @@ footer {
         flex: 0 0 50px;
     }
 
+    .sol-panel .visual .mesh {
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
     .sol-tab {
         font-size: 1.05rem;
         border-left: none;
