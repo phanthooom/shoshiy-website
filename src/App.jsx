@@ -1091,11 +1091,11 @@ export default function App() {
 
     const loop = () => {
       if (!isDragging) {
-        const halfWidth = el.scrollWidth / 2;
-        if (halfWidth > 0) {
+        const oneCopyWidth = el.scrollWidth / 5;
+        if (oneCopyWidth > 0) {
           currentX -= speed;
-          if (currentX <= -halfWidth) {
-            currentX += halfWidth;
+          if (currentX <= -oneCopyWidth) {
+            currentX += oneCopyWidth;
           }
           el.style.transform = `translate3d(${currentX}px, 0, 0)`;
         }
@@ -1116,15 +1116,15 @@ export default function App() {
       if (!isDragging) return;
       const x = e.clientX;
       const deltaX = x - startX;
-      const halfWidth = el.scrollWidth / 2;
+      const oneCopyWidth = el.scrollWidth / 5;
 
       let newX = deltaX;
-      if (newX <= -halfWidth) {
-        newX += halfWidth;
-        startX += halfWidth;
+      if (newX <= -oneCopyWidth) {
+        newX += oneCopyWidth;
+        startX += oneCopyWidth;
       } else if (newX > 0) {
-        newX -= halfWidth;
-        startX -= halfWidth;
+        newX -= oneCopyWidth;
+        startX -= oneCopyWidth;
       }
 
       currentX = newX;
@@ -1147,15 +1147,15 @@ export default function App() {
       if (e.cancelable) e.preventDefault();
       const x = e.touches[0].clientX;
       const deltaX = x - startX;
-      const halfWidth = el.scrollWidth / 2;
+      const oneCopyWidth = el.scrollWidth / 5;
 
       let newX = deltaX;
-      if (newX <= -halfWidth) {
-        newX += halfWidth;
-        startX += halfWidth;
+      if (newX <= -oneCopyWidth) {
+        newX += oneCopyWidth;
+        startX += oneCopyWidth;
       } else if (newX > 0) {
-        newX -= halfWidth;
-        startX -= halfWidth;
+        newX -= oneCopyWidth;
+        startX -= oneCopyWidth;
       }
 
       currentX = newX;
@@ -1336,9 +1336,9 @@ export default function App() {
         <div className="trust" aria-label="Trusted clients">
           <p>{t.trust_label}</p>
           <div className="marquee" aria-hidden="true" ref={marqueeRef}>
-            {[uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo, uzspaceLogo, spacemcLogo].concat(
-              [uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo, uzspaceLogo, spacemcLogo]
-            ).map((logoUrl, i) => <img key={i} src={logoUrl} className="marquee-logo-img" alt="Official Partner Logo" />)}
+            {Array(5).fill([uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo, uzspaceLogo, spacemcLogo]).flat().map((logoUrl, i) => (
+              <img key={i} src={logoUrl} className="marquee-logo-img" alt="Official Partner Logo" />
+            ))}
           </div>
         </div>
 
