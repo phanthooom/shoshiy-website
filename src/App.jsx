@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, memo } from "react";
 import uztelecomLogo from "./assets/logos/uztelecom.svg";
 import itparkLogo from "./assets/logos/itpark.svg";
 import mygovLogo from "./assets/logos/mygov.svg";
@@ -21,6 +21,8 @@ import {
 ───────────────────────────────────────── */
 const T = {
   en: {
+    meta_title: "Shoshiy Group — Enterprise Software & GovTech Engineering Tashkent",
+    meta_desc: "Shoshiy Group engineers enterprise software, national GIS platforms, and AI systems for governments and ministries in Uzbekistan and Central Asia.",
     lang: "EN",
     nav: ["Home", "Services", "Solutions", "Work", "Technology", "Contact"],
     hero_eyebrow: "Digital engineering, from Tashkent to the world",
@@ -90,6 +92,8 @@ const T = {
     contact_email: "Email",
   },
   ru: {
+    meta_title: "Shoshiy Group — Корпоративное ПО и GovTech системы в Ташкенте",
+    meta_desc: "Shoshiy Group разрабатывает корпоративное ПО, национальные ГИС-платформы и AI-системы для правительств, министерств и крупного бизнеса Узбекистана.",
     lang: "RU",
     nav: ["Главная", "Услуги", "Решения", "Портфолио", "Технологии", "Контакт"],
     hero_eyebrow: "Цифровой инжиниринг — из Ташкента в мир",
@@ -159,6 +163,8 @@ const T = {
     contact_email: "Email",
   },
   uz: {
+    meta_title: "Shoshiy Group — Toshkentda korporativ dasturlar va GovTech tizimlari",
+    meta_desc: "Shoshiy Group O'zbekiston hukumatlari, vazirliklari va yirik biznesi uchun korporativ dasturiy ta'minot, milliy GIS platformalari va AI tizimlari yaratadi.",
     lang: "UZ",
     nav: ["Bosh sahifa", "Xizmatlar", "Yechimlar", "Portfel", "Texnologiya", "Aloqa"],
     hero_eyebrow: "Raqamli muhandislik — Toshkentdan dunyoga",
@@ -440,7 +446,7 @@ function Preloader({ onDone }) {
 }
 
 /* ─── Real Shoshiy Logo SVG (inline, theme-aware) ─── */
-function ShoshiyLogoSVG({ size = 28, theme = "auto" }) {
+const ShoshiyLogoSVG = memo(({ size = 28, theme = "auto" }) => {
   // "S" in accent blue, rest in currentColor
   // Matches the brand: bold wordmark, "S" highlighted
   return (
@@ -463,13 +469,13 @@ function ShoshiyLogoSVG({ size = 28, theme = "auto" }) {
       </text>
     </svg>
   );
-}
+});
 
-const Logo = ({ lang }) => (
+const Logo = memo(({ lang }) => (
   <a href="#top" className="logo magnetic">
     <ShoshiyLogoSVG size={30} />
   </a>
-);
+));
 
 /* ─── Hero Canvas ─── */
 function HeroCanvas({ start }) {
@@ -479,7 +485,7 @@ function HeroCanvas({ start }) {
     if (!start) return;
     const cv = ref.current, ctx = cv.getContext("2d");
     const reduce = prefersReduced();
-    let W, H, DPR, cx, cy, raf;
+    let W, H, DPR, cx, cy, raf, visible = false;
     const size = () => {
       DPR = Math.min(devicePixelRatio || 1, 2);
       W = cv.clientWidth; H = cv.clientHeight;
@@ -530,10 +536,21 @@ function HeroCanvas({ start }) {
         ctx.beginPath(); ctx.arc(p.x, p.y, 1.4 + p.s * 1.6, 0, 7); ctx.fill();
       }
       ctx.globalAlpha = 1;
-      raf = requestAnimationFrame(frame);
+      if (visible) {
+        raf = requestAnimationFrame(frame);
+      }
     };
-    frame();
-    return () => { cancelAnimationFrame(raf); removeEventListener("resize", size); removeEventListener("mousemove", onMove); };
+
+    const io = new IntersectionObserver(([e]) => {
+      const wasVisible = visible;
+      visible = e.isIntersecting;
+      if (visible && !wasVisible) {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(frame);
+      }
+    }, { threshold: 0.01 });
+    io.observe(cv);
+    return () => { cancelAnimationFrame(raf); removeEventListener("resize", size); removeEventListener("mousemove", onMove); io.disconnect(); };
   }, [start, accent]);
   return <canvas id="hero-canvas" ref={ref} />;
 }
@@ -546,7 +563,7 @@ function Globe({ start }) {
     if (!start) return;
     const cv = ref.current, ctx = cv.getContext("2d");
     const reduce = prefersReduced();
-    let W, H, DPR, cx, cy, R, raf;
+    let W, H, DPR, cx, cy, R, raf, visible = false;
     const size = () => {
       DPR = Math.min(devicePixelRatio || 1, 2);
       W = cv.clientWidth; H = cv.clientHeight;
@@ -588,10 +605,21 @@ function Globe({ start }) {
         ctx.beginPath(); ctx.arc(A.x, A.y, 2 + pulse * 2, 0, 7); ctx.fill();
       }
       ctx.globalAlpha = 1;
-      raf = requestAnimationFrame(frame);
+      if (visible) {
+        raf = requestAnimationFrame(frame);
+      }
     };
-    frame();
-    return () => { cancelAnimationFrame(raf); removeEventListener("resize", size); };
+
+    const io = new IntersectionObserver(([e]) => {
+      const wasVisible = visible;
+      visible = e.isIntersecting;
+      if (visible && !wasVisible) {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(frame);
+      }
+    }, { threshold: 0.01 });
+    io.observe(cv);
+    return () => { cancelAnimationFrame(raf); removeEventListener("resize", size); io.disconnect(); };
   }, [start, accent]);
   return <canvas id="globe-canvas" ref={ref} />;
 }
@@ -805,12 +833,20 @@ function LiveCanvas({ kind }) {
           }
         }
       }
-      raf = requestAnimationFrame(draw);
+      if (visible) {
+        raf = requestAnimationFrame(draw);
+      }
     };
 
-    const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { threshold: 0.01 });
+    const io = new IntersectionObserver(([e]) => {
+      const wasVisible = visible;
+      visible = e.isIntersecting;
+      if (visible && !wasVisible) {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(draw);
+      }
+    }, { threshold: 0.01 });
     io.observe(cv);
-    raf = requestAnimationFrame(draw);
     return () => { cancelAnimationFrame(raf); removeEventListener("resize", sz); io.disconnect(); };
   }, [kind]);
   return <canvas className="live" ref={ref} />;
@@ -824,7 +860,7 @@ function SolCanvas({ kind }) {
     const cv = ref.current;
     if (!cv) return;
     const ctx = cv.getContext("2d");
-    let raf, a = 0;
+    let raf, visible = false, a = 0;
 
     const sz = () => {
       const w = cv.clientWidth, h = cv.clientHeight;
@@ -954,10 +990,21 @@ function SolCanvas({ kind }) {
           ctx.globalAlpha = 1;
         }
       }
-      raf = requestAnimationFrame(draw);
+      if (visible) {
+        raf = requestAnimationFrame(draw);
+      }
     };
-    draw();
-    return () => { cancelAnimationFrame(raf); removeEventListener("resize", sz); };
+
+    const io = new IntersectionObserver(([e]) => {
+      const wasVisible = visible;
+      visible = e.isIntersecting;
+      if (visible && !wasVisible) {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(draw);
+      }
+    }, { threshold: 0.01 });
+    io.observe(cv);
+    return () => { cancelAnimationFrame(raf); removeEventListener("resize", sz); io.disconnect(); };
   }, [kind, accent]);
   return <canvas className="sol-live" ref={ref} />;
 }
@@ -1060,8 +1107,8 @@ export default function App() {
   const [lang, setLang] = useState("ru");
   const [langOpen, setLangOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const progressRef = useRef(null);
+  const headerRef = useRef(null);
   const [activeSol, setActiveSol] = useState(0);
   const [activeNav, setActiveNav] = useState(0);
   const [ti, setTi] = useState(0);
@@ -1196,14 +1243,40 @@ export default function App() {
   }, [loaded]);
 
   useEffect(() => {
+    const header = headerRef.current;
+    const progress = progressRef.current;
+    const heroVisual = document.getElementById("heroVisual");
+    let rId = null;
+
     const onScroll = () => {
-      const y = scrollY;
-      setScrolled(y > 20);
-      lastY.current = y;
-      setProgress((y / (document.body.scrollHeight - innerHeight)) * 100);
+      cancelAnimationFrame(rId);
+      rId = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        
+        // 1. Header scrolled class
+        if (header) {
+          header.classList.toggle("scrolled", y > 20);
+        }
+        
+        // 2. Scroll progress width
+        if (progress) {
+          const limit = document.documentElement.scrollHeight - window.innerHeight;
+          const pct = limit > 0 ? (y / limit) * 100 : 0;
+          progress.style.width = `${pct}%`;
+        }
+
+        // 3. Parallax scroll for heroVisual
+        if (heroVisual) {
+          heroVisual.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
+        }
+      });
     };
-    addEventListener("scroll", onScroll);
-    return () => removeEventListener("scroll", onScroll);
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(rId);
+    };
   }, []);
 
   useEffect(() => {
@@ -1212,13 +1285,6 @@ export default function App() {
     secs.forEach((s) => io.observe(s));
     return () => io.disconnect();
   }, [loaded]);
-
-  useEffect(() => {
-    const el = document.getElementById("heroVisual");
-    const onScroll = () => { if (el) el.style.transform = `translateY(${scrollY * 0.12}px)`; };
-    addEventListener("scroll", onScroll);
-    return () => removeEventListener("scroll", onScroll);
-  }, []);
 
   /* Close lang dropdown on outside click */
   useEffect(() => {
@@ -1229,6 +1295,23 @@ export default function App() {
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, [langOpen]);
+
+  /* Dynamic SEO Meta Tags based on current language */
+  useEffect(() => {
+    document.title = t.meta_title;
+    
+    // Update or create meta description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.content = t.meta_desc;
+
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+  }, [lang, t]);
 
   const perView = () => (typeof window !== "undefined" && innerWidth <= 760 ? 1 : 2);
   const maxTi = Math.max(0, TESTI_DATA.length - perView());
@@ -1266,7 +1349,7 @@ export default function App() {
     <>
       <Preloader onDone={() => setLoaded(true)} />
       <div className="grain" />
-      <div className="progress" style={{ width: `${progress}%` }} />
+      <div className="progress" ref={progressRef} />
       <div className="cur-dot" id="curDot" />
       <div className="cur-ring" id="curRing" />
 
@@ -1278,7 +1361,7 @@ export default function App() {
       </nav>
 
       {/* Header */}
-      <header className={`${scrolled ? "scrolled" : ""}`}>
+      <header ref={headerRef}>
         <div className="wrap">
           <nav className="nav" role="navigation" aria-label="Main navigation">
             <Logo lang={lang} />
