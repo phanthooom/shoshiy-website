@@ -847,11 +847,9 @@ html[data-theme="light"] .theme-toggle-thumb {
     display: flex;
     gap: 60px;
     width: max-content;
-    animation: scroll-x 28s linear infinite
-}
-
-.marquee:hover {
-    animation-play-state: paused
+    cursor: grab;
+    user-select: none;
+    will-change: transform;
 }
 
 .marquee-logo-img {

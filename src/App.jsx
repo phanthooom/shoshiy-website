@@ -1068,6 +1068,7 @@ export default function App() {
   const [formState, setFormState] = useState("idle"); // idle | sending | sent | error
   const [formData, setFormData] = useState({ name: "", email: "", org: "", service: "", message: "" });
   const lastY = useRef(0);
+  const marqueeRef = useRef(null);
   const t = T[lang];
 
   useEffect(() => { document.documentElement.setAttribute("data-theme", theme); }, [theme]);
@@ -1077,6 +1078,109 @@ export default function App() {
   useEffect(() => { document.documentElement.setAttribute("lang", lang === "uz" ? "uz" : lang === "ru" ? "ru" : "en"); }, [lang]);
 
   useInteractions(loaded);
+
+  useEffect(() => {
+    const el = marqueeRef.current;
+    if (!el) return;
+
+    let isDragging = false;
+    let startX = 0;
+    let currentX = 0;
+    let animationFrameId = null;
+    const speed = 0.8; // px per frame
+
+    const loop = () => {
+      if (!isDragging) {
+        const halfWidth = el.scrollWidth / 2;
+        if (halfWidth > 0) {
+          currentX -= speed;
+          if (currentX <= -halfWidth) {
+            currentX += halfWidth;
+          }
+          el.style.transform = `translate3d(${currentX}px, 0, 0)`;
+        }
+      }
+      animationFrameId = requestAnimationFrame(loop);
+    };
+
+    animationFrameId = requestAnimationFrame(loop);
+
+    const onMouseDown = (e) => {
+      isDragging = true;
+      startX = e.clientX - currentX;
+      el.style.cursor = 'grabbing';
+      el.style.transition = 'none';
+    };
+
+    const onMouseMove = (e) => {
+      if (!isDragging) return;
+      const x = e.clientX;
+      const deltaX = x - startX;
+      const halfWidth = el.scrollWidth / 2;
+
+      let newX = deltaX;
+      if (newX <= -halfWidth) {
+        newX += halfWidth;
+        startX += halfWidth;
+      } else if (newX > 0) {
+        newX -= halfWidth;
+        startX -= halfWidth;
+      }
+
+      currentX = newX;
+      el.style.transform = `translate3d(${newX}px, 0, 0)`;
+    };
+
+    const onMouseUp = () => {
+      isDragging = false;
+      if (el) el.style.cursor = 'grab';
+    };
+
+    const onTouchStart = (e) => {
+      isDragging = true;
+      startX = e.touches[0].clientX - currentX;
+      el.style.transition = 'none';
+    };
+
+    const onTouchMove = (e) => {
+      if (!isDragging) return;
+      if (e.cancelable) e.preventDefault();
+      const x = e.touches[0].clientX;
+      const deltaX = x - startX;
+      const halfWidth = el.scrollWidth / 2;
+
+      let newX = deltaX;
+      if (newX <= -halfWidth) {
+        newX += halfWidth;
+        startX += halfWidth;
+      } else if (newX > 0) {
+        newX -= halfWidth;
+        startX -= halfWidth;
+      }
+
+      currentX = newX;
+      el.style.transform = `translate3d(${newX}px, 0, 0)`;
+    };
+
+    el.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+    el.addEventListener('touchstart', onTouchStart, { passive: true });
+    window.addEventListener('touchmove', onTouchMove, { passive: false });
+    window.addEventListener('touchend', onMouseUp);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      if (el) {
+        el.removeEventListener('mousedown', onMouseDown);
+        el.removeEventListener('touchstart', onTouchStart);
+      }
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+      window.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('touchend', onMouseUp);
+    };
+  }, [loaded]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -1231,7 +1335,7 @@ export default function App() {
         {/* TRUST MARQUEE */}
         <div className="trust" aria-label="Trusted clients">
           <p>{t.trust_label}</p>
-          <div className="marquee" aria-hidden="true">
+          <div className="marquee" aria-hidden="true" ref={marqueeRef}>
             {[uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo, uzspaceLogo, spacemcLogo].concat(
               [uztelecomLogo, itparkLogo, mygovLogo, agrobankLogo, cbuLogo, uzspaceLogo, spacemcLogo]
             ).map((logoUrl, i) => <img key={i} src={logoUrl} className="marquee-logo-img" alt="Official Partner Logo" />)}
